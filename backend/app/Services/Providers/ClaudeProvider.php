@@ -13,7 +13,7 @@ class ClaudeProvider implements AIProviderInterface
 
     public function __construct()
     {
-        $this->apiKey = config('ai.providers.claude.api_key');
+        $this->apiKey = config('ai.providers.claude.api_key') ?? '';
         $this->apiUrl = config('ai.providers.claude.api_url', 'https://api.anthropic.com/v1/messages');
         $this->model = config('ai.providers.claude.model', 'claude-3-5-sonnet-20241022');
     }

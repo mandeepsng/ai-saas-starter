@@ -13,7 +13,7 @@ class OpenAIProvider implements AIProviderInterface
 
     public function __construct()
     {
-        $this->apiKey = config('ai.providers.openai.api_key');
+        $this->apiKey = config('ai.providers.openai.api_key') ?? '';
         $this->apiUrl = config('ai.providers.openai.api_url', 'https://api.openai.com/v1/chat/completions');
         $this->model = config('ai.providers.openai.model', 'gpt-4o-mini');
     }
